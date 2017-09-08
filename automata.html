@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Automata</title>
+</head>
+<body>
+	
+		
+
+	<script>
+
+	var ERROR = -1; 
+	var ACEPTADA = 0;
+	var n=0;
+	var indice=0;
+   	var tamaño=0;
+
+		
+	estado_0();
+
+
+
+    function obtenercaracter(){
+
+    	n = prompt("Ingrese caracter: ")
+    	var expReg= /[a-z]/;
+    	var expNum= /[1-9]/;
+    	var expS= /[+|-|=]/;
+    	var expTotal=/[a-z][1-9][+|-|=]/;
+    	tamaño=n.length;
+
+                if (expReg.test(n)) {
+
+                    
+                    alert("La expresión Letra "+n+" es VALIDA");
+                    
+                    
+                }else{
+
+                	if (expNum.test(n)) {
+
+                		alert("La expresión Numero "+n+" es VALIDA");
+
+                	}else{
+
+                		if (expS.test(n)) {
+
+                		alert("La expresión Simbolo "+n+" es VALIDA");
+
+                		}
+
+                	
+                	
+                	};
+
+                                       
+                };
+
+
+    }
+	
+
+	function estado_0(){
+
+		obtenercaracter();	
+		var c =n.charAt(indice);	
+		document.write("0) El caracter es:  "+c+" <br/>");
+		document.write("Indice= "+indice+" tamaño= "+tamaño+"<br/><br/>");
+		if (indice<tamaño) {
+
+
+			switch(c){
+
+				case '+' : indice++;
+							return estado_1();					  
+						   						   
+						
+				case '-' : return estado_2();					   						
+						   indice++;						  
+
+				case '=' : alert("pase por aca = ");
+						   //indice++;
+						   return estado_3();
+
+
+				// case de numeros 1-9
+				case '1': alert("pase por aca 1 en el caso 1");
+						   indice++;
+						   return estado_4();
+							
+				case '2' : alert("pase por aca 2");
+						   indice++;
+						   return estado_4();
+				case '3' : alert("pase por aca 3");
+						   indice++;
+						   return estado_4();
+
+				case '4' : alert("pase por aca 4");
+						   indice++;
+						   return estado_4();
+				case '5' : alert("pase por aca 5");
+						   indice++;
+						   return estado_4();
+
+				case '6' : alert("pase por aca 6");
+						   indice++;
+						   return estado_4();
+
+				case '7' : alert("pase por aca");
+						   indice++;
+						   return estado_4();
+
+				case '8' : alert("pase por aca");
+						   indice++;
+						   return estado_4();
+				case '9' : alert("pase por aca");
+						   indice++;
+						   return estado_4();
+
+				
+				//case de letras a - z
+				case 'a' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'b' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'c' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'd' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'e' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'f' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'g' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'h' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'i' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'j' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'k' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'l' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'm' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'n' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'ñ' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'o' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+
+			/* :::::::: Letra P para estado_8 :::::::::*/
+				case 'p' : alert("pase por aca");
+							indice++;
+						   	return estado_8();
+			/* :::::::: Letra P para estado_8 :::::::::*/
+
+				case 'q' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'r' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 's' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 't' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'u' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'v' : alert("pase por aca");
+							indice++;
+						   	return estado_6();						   	
+				case 'w' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'x' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'y' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'z' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+
+				default:   document.write("ERROR");
+						   return ERROR; 
+			}
+		}
+	}	
+
+	function estado_1(){
+
+		var c = n.charAt(indice);
+		document.writeln("1) El caracter es: "+c+"<br/>");
+		document.writeln("Indice= "+indice+" tamaño= "+tamaño+ "<br/><br/>");
+		if (tamaño==1) {
+				document.write("ESTADO ACEPTADO 'SUMAR' ");
+				
+				
+			}else{ 
+					document.write("ESTADO NO ACEPTADO");
+				
+			};			
+	}
+
+	function estado_2(){
+
+		var c = n.charAt(indice);
+		document.writeln("2) El caracter es:  "+c+"<br/>");
+		document.writeln("Indice= "+indice+" tamaño= "+tamaño+ "<br/><br/>");
+		if (tamaño==1) {
+				document.write("ESTADO ACEPTADO 'RESTAR' ");
+				
+				
+			}else{ 
+					document.write("ESTADO NO ACEPTADO");
+				
+			};	
+		
+	}	
+
+
+	function estado_3(){
+
+		var c = n.charAt(indice);
+		document.writeln("3) El caracter es:  "+c+"<br/>");
+		document.writeln("Indice= "+indice+" tamaño= "+tamaño+ "<br/><br/>");
+		if (tamaño==1) {
+				document.write("ESTADO ACEPTADO 'ASIGNAR'");
+				
+				
+			}else{ 
+					document.write("ESTADO NO ACEPTADO");
+				
+			};	
+	}
+
+//var cont=0;
+	function estado_4(){
+		 
+		var c = n.charAt(indice);
+		document.writeln("4) El caracter es:  "+c+"<br/>");
+		document.writeln("Indice= "+indice+" tamaño= "+tamaño+ "<br/><br/>");
+		if (indice<tamaño){
+
+			switch(c){						  
+
+				case '0' : alert("pase por aca caso 0");
+						   indice++;
+						   return estado_4();
+
+				case '1' : alert("pase por aca caso 1");
+						   indice++;
+						   	return estado_4();						   					    
+							
+				case '2' : alert("pase por aca caso 2");
+						   indice++;
+						   return estado_4();
+				case '3' : alert("pase por aca caso 3");
+						   indice++;
+						   return estado_4();
+
+				case '4' : alert("pase por aca caso 4");
+						   indice++;
+						   return estado_4();
+				case '5' : alert("pase por aca caso 5");
+						   indice++;
+						   return estado_4();
+
+				case '6' : alert("pase por aca caso 6");
+						   indice++;
+						   return estado_4();
+
+				case '7' : alert("pase por aca caso 7");
+						   indice++;
+						   return estado_4();
+
+				case '8' : alert("pase por aca caso 8");
+						   indice++;
+						   return estado_4();
+				case '9' : alert("pase por aca caso 9");
+						   indice++;
+						   return estado_4();
+
+				default: return estado_5();
+
+		}
+
+	}else{
+					document.write("ZONA NO ACEPTACION");
+
+			};
+
+}
+
+
+	function estado_5(){
+
+		var c = n.charAt(indice);
+		document.writeln("5) El caracter es:  "+c+"<br/>");
+		document.writeln("Indice= "+indice+" tamaño= "+tamaño+ "<br/><br/>");
+		document.writeln("Contador es: "+conta);
+		if ((tamaño - indice)<=1) {
+
+				document.write("ESTADO ACEPTADO 'SUMAR' ");
+
+				
+		} else{
+
+				document.write("ESTADO NO ACEPTADO");
+
+		};	
+			
+			
+	}
+	
+	function estado_6(){
+
+		var c = n.charAt(indice);
+		document.writeln("6) El caracter es:  "+c+"<br/>");
+		document.writeln("Indice= "+indice+" tamaño= "+tamaño+ "<br/><br/>");
+		if (indice<tamaño){
+
+
+			switch(c){
+
+				case 'a' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'b' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'c' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'd' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'e' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'f' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'g' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'h' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'i' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'j' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'k' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'l' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'm' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'n' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'ñ' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'o' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'p' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'q' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'r' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 's' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 't' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'u' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'v' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'w' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'x' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'y' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'z' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+
+				default: return estado_7();
+
+
+
+			}
+
+		}
+	}
+
+
+	function estado_7(){
+
+		var c = n.charAt(indice);
+		document.writeln("7) El caracter es:  "+c+"<br/>");
+		document.writeln("Indice= "+indice+" tamaño= "+tamaño+ "<br/><br/>");
+		if ((tamaño - indice)<=1) {
+
+				document.write("ESTADO ACEPTADO 'LETRAS' ");
+				
+				
+			}else{ 
+					document.write("ESTADO NO ACEPTADO");
+				
+			};	
+	}
+
+
+	function estado_8(){
+
+		var c = n.charAt(indice);
+		document.writeln("8) El caracter es:  "+c+"<br/>");
+		document.writeln("Indice= "+indice+" tamaño= "+tamaño+ "<br/><br/>");
+		if (indice<tamaño){
+
+			switch(c){
+
+				case 'a' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'b' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'c' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'd' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'e' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'f' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'g' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'h' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'i' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'j' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'k' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'l' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'm' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'n' : alert("pase por aca n");
+							indice++;
+						   	return estado_6();
+				case 'ñ' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'o' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'p' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'q' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				/* :::::::: Letra r para estado_9 :::::::::*/ 
+						   	
+				case 'r' : alert("pase por aca r");
+							indice++;
+						   	return estado_9();
+
+				case 's' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 't' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'u' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'v' : alert("pase por aca");
+							indice++;
+						   	return estado_6();					
+				case 'w' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'x' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'y' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'z' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+
+				default: return estado_13();
+
+
+			}
+		}
+	}
+
+
+	function estado_9(){
+
+		var c = n.charAt(indice);
+		document.writeln("9) El caracter es:  "+c+"<br/>");
+		document.writeln("Indice= "+indice+" tamaño= "+tamaño+ "<br/><br/>");
+		if (indice<tamaño){
+
+
+			switch(c){
+
+
+				case 'a' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'b' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'c' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'd' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'e' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'f' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'g' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'h' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+
+			/* :::::::: Letra i para estado_10 :::::::::*/ 
+
+				case 'i' : alert("pase por aca");
+							indice++;
+						   	return estado_10();
+
+
+				case 'j' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'k' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'l' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'm' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'n' : alert("pase por aca n");
+							indice++;
+						   	return estado_6();
+				case 'ñ' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'o' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'p' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'q' : alert("pase por aca");
+							indice++;
+						   	return estado_6();							   	
+				case 'r' : alert("pase por aca r");
+							indice++;
+						   	return estado_6();
+				case 's' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 't' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'u' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'v' : alert("pase por aca");
+							indice++;
+						   	return estado_6();				
+				case 'w' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'x' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'y' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'z' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+
+				default: return estado_13();
+
+			}
+
+		
+
+		}
+	}
+
+	function estado_10(){
+
+		var c = n.charAt(indice);
+		document.writeln("10) El caracter es:  "+c+"<br/>");
+		document.writeln("Indice= "+indice+" tamaño= "+tamaño+ "<br/><br/>");
+		if (indice<tamaño){
+
+
+			switch(c){
+
+
+				case 'a' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'b' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'c' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'd' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'e' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'f' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'g' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'h' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'i' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'j' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'k' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'l' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'm' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+
+			/* :::::::: Letra n para estado_11 :::::::::*/ 
+
+				case 'n' : alert("pase por aca n");
+							indice++;
+						   	return estado_11();
+			/* :::::::: Letra n para estado_11 :::::::::*/ 
+
+				case 'ñ' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'o' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'p' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'q' : alert("pase por aca");
+							indice++;
+						   	return estado_6();							   	
+				case 'r' : alert("pase por aca r");
+							indice++;
+						   	return estado_6();
+				case 's' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 't' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'u' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'v' : alert("pase por aca");
+							indice++;
+						   	return estado_6();						   	
+				case 'w' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'x' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'y' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'z' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+
+				default: return estado_13();
+
+			}
+
+		
+
+		}
+	}
+
+	function estado_11(){
+
+		var c = n.charAt(indice);
+		document.writeln("11) El caracter es:  "+c+"<br/>");
+		document.writeln("Indice= "+indice+" tamaño= "+tamaño+ "<br/><br/>");
+		if (indice<tamaño){
+
+
+			switch(c){
+
+
+				case 'a' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'b' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'c' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'd' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'e' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'f' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'g' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'h' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'i' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'j' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'k' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'l' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'm' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'n' : alert("pase por aca n");
+							indice++;
+						   	return estado_11();
+				case 'ñ' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'o' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'p' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'q' : alert("pase por aca");
+							indice++;
+						   	return estado_6();							   	
+				case 'r' : alert("pase por aca r");
+							indice++;
+						   	return estado_6();
+				case 's' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+
+			/* :::::::: Letra n para estado_12 :::::::::*/ 
+				case 't' : alert("pase por aca");
+							//indice++;
+						   	return estado_12();
+			/* :::::::: Letra n para estado_12 :::::::::*/ 			   	
+
+				case 'u' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'v' : alert("pase por aca");
+							indice++;
+						   	return estado_6();						   	
+				case 'w' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'x' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'y' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+				case 'z' : alert("pase por aca");
+							indice++;
+						   	return estado_6();
+
+				default: return estado_13();
+
+			}
+
+		
+
+		}
+	}
+
+
+	function estado_12(){
+
+		var c = n.charAt(indice);
+		document.writeln("12) El caracter es:  "+c+"<br/>");
+		document.writeln("Indice= "+indice+" tamaño= "+tamaño+ "<br/><br/>");
+		if ((tamaño - indice)<=1) {
+
+				document.write("ESTADO ACEPTADO 'IMPRIMIR' ");
+				
+				
+			}else{ 
+					document.write("ESTADO NO ACEPTADO");
+				
+			};	
+	}
+
+	function estado_13(){
+
+		var c = n.charAt(indice);
+		document.writeln("13) El caracter es:  "+c+"<br/>");
+		document.writeln("Indice= "+indice+" tamaño= "+tamaño+ "<br/><br/>");
+		if ((tamaño - indice)<=1) {
+
+				document.write("ESTADO ACEPTADO 'LETRAS' ");
+				
+				
+			}else{ 
+					document.write("ESTADO NO ACEPTADO");
+				
+			};	
+	}
+	</script>
+
+</body>
+</html>
